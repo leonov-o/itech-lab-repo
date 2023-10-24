@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+
+nav {
+    position: fixed;
+    width: 100vw;
+    height: 75px;
+    background-color: aliceblue;
+    padding: 22px 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+.firstSection {
+    padding: 100px 25px 25px;
+}
+
+
+.firstSection p {
+    width: 700px;
+    font-size: 18px;
+}
+
+#firstSectionImage {
+    width: 500px;
+    border-radius: 30px;
+}
+
+.space{
+    height: 300px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.radioSection {
+    display: flex;
+    justify-content: space-around;
+
+    height: 400px;
+    margin-top: 70px;
+}
+
+.radioSection :nth-child(2) { order: 3; }
+.radioSection :nth-child(4) { order: 4; }
+.radioSection :nth-child(6) { order: 1; }
+.radioSection :nth-child(8) { order: 2; }
+
+.radioSection input {
+    display: none;
+}
+
+.radioSection label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    /*padding: 19px 21px;*/
+    background-color: blue;
+    margin: 5px;
+    font-size: 30px;
+}
+
+.radioSection input:disabled + label  {
+    background-color: red;
+}
+
+.radioSection input:checked + label  {
+    background-color: green;
+}
