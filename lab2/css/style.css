@@ -41,7 +41,6 @@ h2 {
 .radioSection {
     display: flex;
     justify-content: space-around;
-
     height: 400px;
     margin-top: 70px;
 }
