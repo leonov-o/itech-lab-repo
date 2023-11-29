@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Лаб. №2 - Леонов</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<h1>Лабораторна робота №3 Мова створення сценаріїв JavaScript</h1>
+<div class="main">
+    <div class="gallery" id="gallery">
+    </div>
+    <div class="controls">
+        <div class="options">
+            <label>
+                Ширина
+                <input id="width" type="number" oninput="changeOptions(this)">
+            </label>
+            <label>
+                Висота
+                <input id="height" type="number" oninput="changeOptions(this)">
+            </label>
+            <label>
+                Товщину рамки
+                <input id="borderWidth" type="number" oninput="changeOptions(this)">
+            </label>
+            <label>
+                Альтернативний текст
+                <input id="textContent" type="text" oninput="changeOptions(this)">
+            </label>
+
+        </div>
+        <div class="position">
+            <button onclick="onSwap(this.textContent)">вижче</button>
+            <button onclick="onSwap(this.textContent)">нижче</button>
+        </div>
+    </div>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>

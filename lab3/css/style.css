@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.main .gallery {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.main .controls {
+    display: flex;
+    align-items: center;
+}
+
+.main .controls .options {
+    width: 180px;
+}
+
+.main .controls .position {
+    margin-left: 10px;
+    width: 110px;
+}
+ .main .controls .position button {
+     margin-top: 6px;
+ }
