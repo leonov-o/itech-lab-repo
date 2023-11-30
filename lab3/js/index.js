@@ -3,30 +3,30 @@ let selectedImage = 0;
 let images = [
     {
         src: "img_1.png",
-        text : "1",
+        text: "1",
         style: {
-            width : "120px",
-            height : "120px",
+            width: "120px",
+            height: "120px",
             borderWidth: "5px",
             borderColor: "green"
         }
     },
     {
         src: "img_2.png",
-        text : "2",
+        text: "2",
         style: {
-            width : "120px",
-            height : "120px",
+            width: "120px",
+            height: "120px",
             borderWidth: "5px",
             borderColor: "black"
         }
     },
     {
         src: "img_3.png",
-        text : "3",
+        text: "3",
         style: {
-            width : "120px",
-            height : "120px",
+            width: "120px",
+            height: "120px",
             borderWidth: "5px",
             borderColor: "black"
         }
@@ -34,10 +34,10 @@ let images = [
 ]
 
 const changeOptions = (elem) => {
-    const {id:option, value} = elem
-    if(option==="textContent"){
+    const {id: option, value} = elem
+    if (option === "textContent") {
         images[selectedImage].text = value
-    }else{
+    } else {
         images[selectedImage].style[option] = value + "px"
     }
     renderImages()
@@ -56,7 +56,7 @@ const handleSelect = (index) => {
     selectedImage = index;
     images.forEach((item, i) => {
         item.style.borderColor = "black";
-        if(index === i) item.style.borderColor = "green";
+        if (index === i) item.style.borderColor = "green";
     })
     renderImages()
 }
