@@ -3,7 +3,7 @@ let selectedImage = 0;
 let images = [
     {
         src: "img_1.png",
-        text: "1",
+        alt: "1",
         style: {
             width: "120px",
             height: "120px",
@@ -13,7 +13,7 @@ let images = [
     },
     {
         src: "img_2.png",
-        text: "2",
+        alt: "2",
         style: {
             width: "120px",
             height: "120px",
@@ -23,7 +23,7 @@ let images = [
     },
     {
         src: "img_3.png",
-        text: "3",
+        alt: "3",
         style: {
             width: "120px",
             height: "120px",
@@ -35,8 +35,8 @@ let images = [
 
 const changeOptions = (elem) => {
     const {id: option, value} = elem
-    if (option === "textContent") {
-        images[selectedImage].text = value
+    if (option === "alt") {
+        images[selectedImage].alt = value
     } else {
         images[selectedImage].style[option] = value + "px"
     }
@@ -67,18 +67,14 @@ const renderImages = () => {
         let image = document.createElement("img");
         image.onclick = () => handleSelect(index);
         image.src = `./img/${item.src}`
-        image.alt = index + 1 + "";
+        image.alt = item.alt;
         image.style.marginTop = "5px"
         image.style.width = item.style.width;
         image.style.height = item.style.height;
         image.style.borderWidth = item.style.borderWidth;
         image.style.borderColor = item.style.borderColor;
         image.style.borderStyle = "solid";
-
-        let text = document.createElement("div");
-        text.textContent = item.text
         gallery.append(image)
-        gallery.append(text)
     })
 }
 
