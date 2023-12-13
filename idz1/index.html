@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="./js/index.js"></script>
+  <title>Шифр Цезаря</title>
+</head>
+<body>
+
+  <h2>Шифр Цезаря</h2>
+
+  <label for="inputText">Введіть текст:</label>
+  <input type="text" id="inputText" placeholder="Введіть текст">
+
+  <label for="key">Ключ:</label>
+  <input type="number" id="key" placeholder="Ключ" min="1">
+
+  <button onclick="cipher(true)">Зашифрувати</button>
+  <button onclick="cipher(false)">Дешифрувати</button>
+
+  <p>Результат: <span id="result"></span></p>
+</body>
+</html>
