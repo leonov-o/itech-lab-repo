@@ -8,7 +8,7 @@
     <title>Нереляційна СУБД MongoDB і зберігання даних на стороні клієнта</title>
 </head>
 <body>
-<form action="" method="POST">
+<form action="getByCpu.php" method="POST">
     <label for="cpu">
         Введіть назву процесора:
         <input type="text" name="cpu" id="cpu">
@@ -16,19 +16,24 @@
     </label>
 </form>
 <br>
-<form action="" method="POST">
-    <label for="cpu">
+<form action="getBySoftware.php" method="POST">
+    <label for="software">
         Оберіть програмне забезпечення:
         <select name="software" id="software">
+            <option selected>Оберіть ПЗ</option>
             <?php
-
+            require "./db.php";
+            $distinctSoftware = $collection->distinct("software");
+            foreach ($distinctSoftware as $software) {
+                echo "<option>$software</option>";
+            }
             ?>
         </select>
         <input type="submit" value="Search">
     </label>
 </form>
 <br>
-<form action="db.php" method="GET">
+<form action="getByWarranty.php" method="GET">
     <label for="warranty">
         Показати пристрої з вичерпаним гарантійним терміном:
         <input type="submit" value="Search">
