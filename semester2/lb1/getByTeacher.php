@@ -9,28 +9,28 @@
         <th>type</th>
     </tr>
 
-<?php
+    <?php
 
-include "./db.php";
+    include "./db.php";
 
-$groupID = $_POST["group"];
+    $teacherID = $_POST["teacher"];
 
-if ($groupID == "") {
-    echo "Bad request";
-}
+    if ($teacherID == "") {
+        echo "Bad request";
+    }
 
-$sth = $dbh->prepare('
+    $sth = $dbh->prepare('
     SELECT DISTINCT l.*, t.name FROM lesson AS l
     JOIN lesson_groups AS b ON l.ID_Lesson = b.FID_Lesson2
     JOIN lesson_teacher AS lt ON l.ID_Lesson = lt.FID_Lesson1
     JOIN teacher AS t ON lt.FID_Teacher = t.ID_Teacher
-    WHERE b.FID_Groups = :groupID;
+    WHERE lt.FID_Teacher = :teacherID;
 ');
-$sth->bindValue(':groupID', $groupID, PDO::PARAM_INT);
-$sth->execute();
-$lessons = $sth->fetchAll();
-foreach ($lessons as $lesson) {
-    echo "
+    $sth->bindValue(':teacherID', $teacherID, PDO::PARAM_INT);
+    $sth->execute();
+    $lessons = $sth->fetchAll();
+    foreach ($lessons as $lesson) {
+        echo "
         <tr>
         <td>{$lesson['week_day']}</td>
         <td>{$lesson['lesson_number']}</td>
@@ -40,7 +40,7 @@ foreach ($lessons as $lesson) {
         <td>{$lesson['type']}</td>
     </tr>
     ";
-}
-?>
+    }
+    ?>
 
 </table>
