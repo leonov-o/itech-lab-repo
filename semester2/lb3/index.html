@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/index.js" defer></script>
+    <title>Уніфікований інтерфейс PDO</title>
+</head>
+<body>
+<label for="group">Group</label>
+<select name="group" id="group">
+    <option selected disabled>Select group</option>
+</select>
+<button onclick="getByGroup()">Search</button>
+
+<label for="teacher">Teacher</label>
+<select name="teacher" id="teacher">
+    <option selected disabled>Select teacher</option>
+</select>
+<button onclick="getByTeacher()">Search</button>
+
+<label for="auditorium">Auditorium</label>
+<select name="auditorium" id="auditorium">
+    <option selected disabled>Select auditorium</option>
+</select>
+<button onclick="getByAuditorium()">Search</button>
+
+<table id="table" hidden>
+    <thead>
+    <tr>
+        <th>week_day</th>
+        <th>lesson_number</th>
+        <th>auditorium</th>
+        <th>disciple</th>
+        <th>name</th>
+        <th>type</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+</body>
+</html>
+
+
+
+
